@@ -2,8 +2,8 @@
 	{{ errorf "Please use Hugo version 0.120.0 or higher!" }}
 {{ end }}
 
-{{ if not (eq .Site.DisqusShortname "") }}
-	{{ errorf "Your use of disqusShortname is deprecated by Hugo; Please reference the README.md for further instructions. This error message will be removed in the future because we are also using .Site.DisqusShortname for checking this." }}
+{{ if not .Site.Config.Services.Disqus.Shortname }}
+	{{ errorf "Disqus shortname is not configured. Please configure it in your config file under [services.disqus.shortname]" }}
 {{ end }}
 
 <!DOCTYPE html>
